@@ -183,4 +183,55 @@ result === 'Я не робот'
   ? console.log('Успех!')
   : console.log('Вы робот!');
 
+//
+// 6.3. Операторы с другими типами
+//
+console.log('Вася' || 'Олег');
+console.log(false || 'Олег');
+console.log('Вася' || false);
+console.log(false || false);
+
+console.log('Вася' && 'Олег');
+console.log(false && 'Олег');
+console.log('Вася' && false);
+console.log(false && false);
+
+let a = 'Марина';
+const username = a || 'Петя';
+console.log(username);
+
+const isAdmin = true;
+const filename = isAdmin;
+
+//
+// 6.4. Оператор нулевого слияния
+//
+let age = 0;
+console.log(age || 18);
+console.log(age ?? 18); // для нулевых значений
+
+//
+// 6.5. Упражнение - Проверка прав
+//
+// Определить, может ли пользователь купить игру в интернет-магазине (например, Steam)
+// на основании четырех условий.
+// Баланс пользователя более 1000 рублей или более 100 бонусов.
+// Пользователь не забанен в магазине.
+// Игра не куплена ранее пользователем.
+// Игра доступна в продаже.
+
+let balance = 0;
+let bonusBalance = 1;
+const isBanned = false;
+const isExist = false;
+const isSelling = true;
+
+const canBuy =
+  (balance >= 1000 || bonusBalance >= 100) &&
+  !isBanned &&
+  !isExist &&
+  isSelling;
+
+console.log(`Могу купить игру: ${canBuy ? 'Да' : 'Нет'}`);
+
 */
