@@ -1,5 +1,4 @@
 /*
-
 //
 // Операторы присваивания
 //
@@ -155,7 +154,6 @@ const budget = 10000;
 
 console.log(`Я могу купить ${budget > bmwPrice ? 'BMW' : 'Велосипед'}`);
 
-
 //
 // 5.6. Упражнение - Проверка робота
 //
@@ -196,8 +194,8 @@ console.log(false && 'Олег');
 console.log('Вася' && false);
 console.log(false && false);
 
-let a = 'Марина';
-const username = a || 'Петя';
+let m = 'Марина';
+const username = m || 'Петя';
 console.log(username);
 
 const isAdmin = true;
@@ -233,5 +231,4 @@ const canBuy =
   isSelling;
 
 console.log(`Могу купить игру: ${canBuy ? 'Да' : 'Нет'}`);
-
 */

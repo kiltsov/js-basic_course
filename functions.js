@@ -1,5 +1,4 @@
 /*
-
 //
 // 7.1. Введение в функции
 //
@@ -97,8 +96,6 @@ function getExchangePrice(present1, present2, distance) {
 }
 console.log(getExchangePrice(1, 2, 10));
 
-*/
-
 //
 // 7.8. Упражнение - Кредит на MacBook
 //
@@ -134,15 +131,17 @@ function canBuyMacbook(age, startMoney, haveWork = false) {
 console.log(canBuyMacbook(24, 1500, true));
 
 // Еще одно решение, покороче
-// function credit(age, work) {
-//   return age > 24 && work ? 500 : age > 24 && !work ? 100 : 0;
-// }
+function credit(age, work) {
+  return age > 24 && work ? 500 : age > 24 && !work ? 100 : 0;
+}
 
-// function canBuyMacBook(moneyInUSD, age, work) {
-//   const creditSum = credit(age, work);
-//   return moneyInUSD + creditSum >= priceMacBookInUSD
-//     ? 'может купить'
-//     : 'не может купить';
-// }
+function canBuyMacBook(moneyInUSD, age, work) {
+  const creditSum = credit(age, work);
+  return moneyInUSD + creditSum >= priceMacBookInUSD
+    ? 'может купить'
+    : 'не может купить';
+}
 
-// console.log(canBuyMacBook(1900, 25, false));
+console.log(canBuyMacBook(1900, 25, false));
+
+*/
