@@ -118,8 +118,6 @@ do {
   j++;
 } while (j < 0);
 
-*/
-
 //
 // 9.6. Циклы for of и for in
 //
@@ -143,3 +141,110 @@ console.log('------------------------------------');
 for (index in arr) {
   console.log(index);
 }
+
+
+//
+// 9.7. Упражнение - Расчёт итогового баланса
+//
+
+const startBalance = 100;
+const operations = [1000, -900, 300, 400, -300, -500, 900, 10800];
+
+// Расчёт итогового баланса
+function getBalance(startBalance, operation) {
+  let balance = startBalance;
+  for (const element of operation) {
+    balance += element;
+  }
+  return balance;
+}
+
+// Проверка на наличие отрицательного баланса
+function checkOperations(startBalance, operations) {
+  let balance = startBalance;
+  let flag = true;
+
+  for (const element of operations) {
+    balance += element;
+    if (balance < 0) {
+      flag = false;
+      break;
+    }
+  }
+  return flag;
+}
+
+// Расчёт средних значений
+function averageOperations(operations) {
+  let positiveCount = 0;
+  let positiveSum = 0;
+  let negativeCount = 0;
+  let negativeSum = 0;
+
+  for (const element of operations) {
+    if (element > 0) {
+      positiveCount++;
+      positiveSum += element;
+    }
+
+    if (element < 0) {
+      negativeCount++;
+      negativeSum += element;
+    }
+  }
+
+  return [positiveSum / positiveCount, negativeSum / negativeCount];
+}
+
+console.log(getBalance(startBalance, operations));
+console.log(checkOperations(startBalance, operations));
+console.log(averageOperations(operations));
+
+// Мой вариант, но получилось сложно
+
+// // Расчёт итогового баланса
+// const getBalance = operations.reduce(
+//   (accumulator, currentValue) => accumulator + currentValue,
+//   startBalance
+// );
+
+// // Проверка на наличие отрицательного баланса
+// function checkOperations(startBalance, operations) {
+//   let currentBalance = startBalance;
+
+//   for (const operation of operations) {
+//     currentBalance += operation;
+//     console.log(
+//       `Операция: ${operation}, Текущий баланс: ${currentBalance}, ${
+//         currentBalance >= 0 ? 'Баланс положительный' : 'Баланс отрицательный'
+//       }`
+//     );
+//   }
+// }
+
+// // Расчёт средних значений
+// function averageOperations(operations) {
+//   let negativeBalance = operations.filter((op) => op < 0);
+//   let positiveBalance = operations.filter((op) => op > 0);
+
+//   let averageNegative =
+//     negativeBalance.length > 0
+//       ? negativeBalance.reduce((sum, op) => sum + op, 0) /
+//         negativeBalance.length
+//       : 0;
+
+//   let averagePositive =
+//     positiveBalance.length > 0
+//       ? positiveBalance.reduce((sum, op) => sum + op, 0) /
+//         positiveBalance.length
+//       : 0;
+
+//   console.log(`СРЕДНИЙ РАСХОД: ${averageNegative.toFixed(2)}`);
+//   console.log(`СРЕДНИЙ ДОХОД: ${averagePositive.toFixed(2)}`);
+// }
+
+// checkOperations(startBalance, operations);
+// averageOperations(operations);
+// console.log(`ИТОГОВЫЙ БАЛАНС: ${getBalance}`);
+
+*/

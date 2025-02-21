@@ -35,7 +35,6 @@ const arrLenght = users.push('Никита');
 console.log(users);
 console.log(arrLenght);
 
-
 users.unshift('Вася');
 console.log(users);
 
