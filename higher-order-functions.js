@@ -55,8 +55,6 @@ console.log(powerOfThree(10));
 
 console.log(power(3)(5));
 
-*/
-
 //
 // 10.4. Упражнение - Стрелочные функции
 //
@@ -72,3 +70,5 @@ console.log(powerOfThree(4));
 console.log(powerOfThree(10));
 
 console.log(power(3)(5));
+
+*/
