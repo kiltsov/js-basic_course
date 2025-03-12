@@ -88,7 +88,7 @@ console.log(normalizeNumber(num1))
 console.log(normalizeNumber(num5Error))
 
 //
-// Реализация Антона
+// Реализация Антона Ларичева
 function isPhoneNumber(num) {
     num = num.trim();
     num = num.replace('+7', '8');
@@ -114,5 +114,38 @@ function isPhoneNumber(num) {
 
 console.log(isPhoneNumber(num1));
 console.log(isPhoneNumber(num5Error));
+
+//
+// 12.6. Строки и массивы
+//
+
+const userFullName = 'Вася Пункин Иванович';
+console.log(userFullName.split(' '));
+const [firstName, familyName, lastName] = userFullName.split(' ');
+console.log(firstName);
+console.log(familyName);
+console.log(lastName);
+const arr = ['Ты', 'знаешь', 'JS'];
+console.log(arr.join(' '));
+
+//
+// 12.7. Дополнение строк
+//
+
+const film = ' Звездные войны ';
+console.log(film.padStart(50, '*')); 
+console.log(film.padEnd(50, '*'));
+console.log(film.repeat(10)); // повторить строку 10 раз
+
+//
+// 12.8. Упражнение - маскировка карты
+//
+
+const card = '2834234503458353';
+
+let cardMask = card.slice(card.length - 4).padStart(card.length, '*');
+
+console.log(card);
+console.log(cardMask);
 
 */
