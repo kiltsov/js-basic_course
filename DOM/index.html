@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document Object Model</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Object Model</title>
 
-    <link rel="stylesheet" href="./styles/main.css" />
+  <link rel="stylesheet" href="./styles/main.css" />
 </head>
-<body style="background-color: #1c1b21; text-align: center">
-    <div class="panel">I love this!</div>
-    <input class="input" onkeydown="inputChanged(event)" />
-    <button class="button" onclick="submitForm()">Change</button>
-    <div class="notification notification_hidden">Changed!</div>
 
-    <script src="./scripts/app.js"></script>
-  </body>
+<body style="background-color: #1c1b21; text-align: center">
+  <div class="panel">Привет, пользователь!</div>
+  <input class="input" onkeydown="inputChanged(event)" />
+  <button class="button" onclick="submitForm()">Change</button>
+  <div class="notification notification_hidden">Changed!</div>
+
+  <!-- 17.7. Упражнение - получение DOM элементов -->
+  <div class="one"><span>Элемент 1</span></div>
+  <div class="one"><span>Элемент 2</span></div>
+  <div id="two">Элемент 3</div>
+  <div><span user-id="4">Элемент 4</span></div>
+
+  <!-- 17.8. Добавление html на лету -->
+  <div class="test"></div>
+
+  <script src="./scripts/app.js"></script>
+</body>
+
 </html>
