@@ -44,7 +44,7 @@
                     </button> -->
 
                 </div>
-                <button class="menu__add">
+                <button class="menu__add" onclick="tooglePopup()">
                     <svg width="100%" height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M10.3333 18.6667C14.9357 18.6667 18.6667 14.9357 18.6667 10.3333C18.6667 5.73096 14.9357 2 10.3333 2C5.73096 2 2 5.73096 2 10.3333C2 14.9357 5.73096 18.6667 10.3333 18.6667Z"
@@ -75,7 +75,7 @@
                 <div id="days">
 
                     <!-- <div class="habbit">
-                        <div class="habbit__day">День _</div>
+                        <div class="habbit__day">День ?</div>
                         <div class="habbit__comment">Первый подход всегда даётся тяжело</div>
                         <button class="habbit__delete">
                             <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none"
@@ -88,19 +88,56 @@
                         </button>
                     </div> -->
 
-                    <div class="habbit">
-                        <div class="habbit__day">День ?</div>
-                        <div class="habbit__form">
-                            <div class="input__wrapper">
-                                <input type="text" placeholder="Добавить">
-                                <img class="input__image" src="./images/find.svg" alt="Иконка поиска">
-                            </div>
-                            <button class="button_done">Готово</button>
+                </div>
+
+                <div class="habbit">
+                    <div class="habbit__day">-</div>
+                    <form class="habbit__form" onsubmit="addDays(event)">
+                        <div class="input__wrapper">
+                            <input 
+                                name="comment"
+                                type="text" 
+                                placeholder="Комментарий">
+                            <img class="input__image" src="./images/find.svg" alt="Иконка поиска">
                         </div>
-                    </div>
+                        <button class="button_done" type="submit">Готово</button>
+                    </form>
 
                 </div>
             </main>
+        </div>
+
+        <div class="cover cover_hidden">
+            <div class="popup">
+                <h2>Новая привычка</h2>
+                <div class="icon-label">Иконка</div>
+                <div class="icon-select__wrapper">
+                    <button class="icon-select icon-select_active" onclick="setIcon(this, 'sport')">
+                        <img src="./images/sport.svg" alt="Sport">
+                    </button>
+                    <button class="icon-select" onclick="setIcon(this, 'water')">
+                        <img src="./images/water.svg" alt="Water">
+                    </button>
+                    <button class="icon-select" onclick="setIcon(this, 'food')">
+                        <img src="./images/food.svg" alt="Food">
+                    </button>
+                </div>
+
+                <form class="popup__form" onsubmit="addHabbit(event)">
+                    <input type="text" name="name" placeholder="Название">
+                    <input 
+                    type="text" 
+                    name="icon" 
+                    hidden 
+                    placeholder="Иконка" 
+                    value="sport">
+                    <input type="number" name="target" placeholder="Цель">
+                    <button class="button_done" type="submit">Добавить</button>
+                </form>
+                <button class="popup__close" onclick="tooglePopup()">
+                    <img src="./images/close.svg" alt="Close">
+                </button>
+            </div>
         </div>
     </div>
 
